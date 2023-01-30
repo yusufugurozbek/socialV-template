@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch,Route} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 
 // auth
 import ConfirmMail from '../views/dashboard/auth/confirm-mail'
@@ -19,24 +19,24 @@ import ComingSoon from '../views/dashboard/extrapages/comingsoon'
 const SimpleRouter = () => {
     return (
         <>
-            <Switch>
+            <Routes>
 
                 {/* auth */}
-                <Route  path="/auth/confirm-mail"               component={ConfirmMail}/>
-                <Route  path="/auth/lock-screen"                component={LockScreen}/>
-                <Route  path="/auth/recoverpw"                  component={Recoverpw}/>
-                <Route  path="/auth/sign-in"                    component={SignIn}/>
-                <Route  path="/auth/sign-up"                    component={SignUp}/>  
-                
+                <Route path="/auth/confirm-mail" element={<ConfirmMail/>}/>
+                <Route path="/auth/lock-screen" element={<LockScreen/>}/>
+                <Route path="/auth/recoverpw" element={<Recoverpw/>}/>
+                <Route path="/auth/sign-in" element={<SignIn/>}/>
+                <Route path="/auth/sign-up" element={<SignUp/>}/>
+
                 {/* error */}
-                <Route  path="/errors/error404"                 component={Error404}/>  
-                <Route  path="/errors/error500"                 component={Error500}/>
+                <Route path="/errors/error404" element={<Error404/>}/>
+                <Route path="/errors/error500" element={<Error500/>}/>
 
                 {/* extra-pages */}
-                <Route  path="/extra-pages/pages-maintenance"   component={Maintenance}/>
-                <Route  path="/extra-pages/pages-comingsoon"    component={ComingSoon}/>
-                
-            </Switch>       
+                <Route path="/extra-pages/pages-maintenance" element={<Maintenance/>}/>
+                <Route path="/extra-pages/pages-comingsoon" element={<ComingSoon/>}/>
+
+            </Routes>
         </>
     )
 }

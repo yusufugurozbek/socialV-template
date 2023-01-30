@@ -1,6 +1,6 @@
 import React from 'react'
 import Index from '../views/dashboard/index'
-import {Switch,Route} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 
 //app
 import userProfile from '../views/dashboard/app/user-profile';
@@ -37,7 +37,7 @@ import TableBasic from '../views/dashboard/table/tables-basic';
 import TableEditable from '../views/dashboard/table/table-editable';
 
 //TransitionGroup
-import {TransitionGroup,CSSTransition} from "react-transition-group";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 // blog pages
 import BlogGrid from '../views/dashboard/blog/bloggrid'
@@ -86,87 +86,87 @@ const DefaultRouter = () => {
     return (
         <TransitionGroup>
             <CSSTransition classNames="fadeUp" timeout={300}>
-                <Switch>
-                    <Route path="/"  exact component={Index} />
+                <Routes>
+                    <Route path="*" exact element={<Index/>}/>
 
                     {/* app */}
-                    <Route path="/dashboard/app/profile"                  component={userProfile} />
-                    <Route path="/dashboard/app/user-privacy-setting"     component={UserPrivacySetting}/>
-                    <Route path="/dashboard/app/friend-profile"           component={FriendProfile} />
-                    <Route path="/dashboard/app/profile-badges"           component={ProfileBadges} />
-                    <Route path="/dashboard/app/profile-forum"            component={ProfileForums} />
-                    <Route path="/dashboard/app/notification"             component={Notification}/>
-                    <Route path="/dashboard/app/file"                     component={File}/>
-                    <Route path="/dashboard/app/friend-request"           component={FriendRequest}/>
-                    <Route path="/dashboard/app/todo"                     component={Todo}/>
-                    <Route path="/dashboard/app/user-account-setting"     component={UserAccountSetting}/>
-                    <Route path="/dashboard/app/user-profile-edit"        component={UserProfileEdit}/>
+                    <Route path="/dashboard/app/profile" element={<userProfile/>}/>
+                    <Route path="/dashboard/app/user-privacy-setting" element={<UserPrivacySetting/>}/>
+                    <Route path="/dashboard/app/friend-profile" element={<FriendProfile/>}/>
+                    <Route path="/dashboard/app/profile-badges" element={<ProfileBadges/>}/>
+                    <Route path="/dashboard/app/profile-forum" element={<ProfileForums/>}/>
+                    <Route path="/dashboard/app/notification" element={<Notification/>}/>
+                    <Route path="/dashboard/app/file" element={<File/>}/>
+                    <Route path="/dashboard/app/friend-request" element={<FriendRequest/>}/>
+                    <Route path="/dashboard/app/todo" element={<Todo/>}/>
+                    <Route path="/dashboard/app/user-account-setting" element={<UserAccountSetting/>}/>
+                    <Route path="/dashboard/app/user-profile-edit" element={<UserProfileEdit/>}/>
 
-                     {/* icon */}
-                     <Route path="/dashboard/icon/fontawesome-5"          component={Fontawesome}/>
-                     <Route path="/dashboard/icon/remixicon"                component={Remixicon}/>
-                     <Route path="/dashboard/icon/lineawesome"            component={Lineawesome}/>
-                     <Route path="/dashboard/icon/material"              component={Material}/>
+                    {/* icon */}
+                    <Route path="/dashboard/icon/fontawesome-5" element={<Fontawesome/>}/>
+                    <Route path="/dashboard/icon/remixicon" element={<Remixicon/>}/>
+                    <Route path="/dashboard/icon/lineawesome" element={<Lineawesome/>}/>
+                    <Route path="/dashboard/icon/material" element={<Material/>}/>
 
-                     {/* Form */}
-                     <Route path="/dashboard/form/form-element"           component={FormElement}/>
-                     <Route path="/dashboard/form/form-validation"        component={FormValidation}/>
-                     <Route path="/dashboard/form/form-switch"            component={FormSwitch}/>
-                     <Route path="/dashboard/form/form-wizard"            component={FormWizard}/>
-                     <Route path="/dashboard/form/form-wizard-validate"   component={FormWizardValidate}/>
-                     <Route path="/dashboard/form/form-wizard-vertical"   component={FormWizardVertical}/>
-                     <Route path="/dashboard/form/form-checkbox"          component={FormCheckbox}/>
-                     <Route path="/dashboard/form/form-radio"             component={FormRadio}/>
+                    {/* Form */}
+                    <Route path="/dashboard/form/form-element" element={<FormElement/>}/>
+                    <Route path="/dashboard/form/form-validation" element={<FormValidation/>}/>
+                    <Route path="/dashboard/form/form-switch" element={<FormSwitch/>}/>
+                    <Route path="/dashboard/form/form-wizard" element={<FormWizard/>}/>
+                    <Route path="/dashboard/form/form-wizard-validate" element={<FormWizardValidate/>}/>
+                    <Route path="/dashboard/form/form-wizard-vertical" element={<FormWizardVertical/>}/>
+                    <Route path="/dashboard/form/form-checkbox" element={<FormCheckbox/>}/>
+                    <Route path="/dashboard/form/form-radio" element={<FormRadio/>}/>
 
-                     {/* table */}
-                     <Route path="/dashboard/table/data-table"       component={DataTable}/>
-                     <Route path="/dashboard/table/tables-basic"            component={TableBasic}/>
-                     <Route path="/dashboard/table/table-editable"        component={TableEditable}/>
-                     
-                     {/* blog */}
-                     <Route path="/dashboard/blog/blog-grid"              component={BlogGrid}/>
-                     <Route path="/dashboard/blog/blog-list"              component={BlogList}/>
-                     <Route path="/dashboard/blog/blog-detail"            component={BlogDetail}/>
+                    {/* table */}
+                    <Route path="/dashboard/table/data-table" element={<DataTable/>}/>
+                    <Route path="/dashboard/table/tables-basic" element={<TableBasic/>}/>
+                    <Route path="/dashboard/table/table-editable" element={<TableEditable/>}/>
 
-                     {/* Email */}
-                     <Route path="/dashboard/Email/email"                 component={Email}/>
-                     <Route path="/dashboard/Email/email-compose"         component={EmailCompose}/>
-                     
+                    {/* blog */}
+                    <Route path="/dashboard/blog/blog-grid" element={<BlogGrid/>}/>
+                    <Route path="/dashboard/blog/blog-list" element={<BlogList/>}/>
+                    <Route path="/dashboard/blog/blog-detail" element={<BlogDetail/>}/>
+
+                    {/* Email */}
+                    <Route path="/dashboard/Email/email" element={<Email/>}/>
+                    <Route path="/dashboard/Email/email-compose" element={<EmailCompose/>}/>
+
                     {/*ui kit*/}
-                    <Route path="/dashboard/ui-kit/ui-alerts"             component={UiAlerts}/>
-                    <Route path="/dashboard/ui-kit/ui-badges"             component={UiBadges}/>
-                    <Route path="/dashboard/ui-kit/ui-breadcrumb"         component={UiBreadcrumbs}/>
-                    <Route path="/dashboard/ui-kit/ui-buttons"            component={UiButtons}/>
-                    <Route path="/dashboard/ui-kit/ui-cards"              component={UiCards}/>
-                    <Route path="/dashboard/ui-kit/ui-carousel"           component={UiCarousels}/>
-                    <Route path="/dashboard/ui-kit/ui-color"              component={UiColors}/>
-                    <Route path="/dashboard/ui-kit/ui-dropdowns"          component={UiDropdowns}/>
-                    <Route path="/dashboard/ui-kit/ui-embed-video"        component={UiEmbedVideos}/>
-                    <Route path="/dashboard/ui-kit/ui-grid"               component={UiGrids}/>
-                    <Route path="/dashboard/ui-kit/ui-images"             component={UiImages}/>
-                    <Route path="/dashboard/ui-kit/ui-list-groups"        component={UiListGroups}/>
-                    <Route path="/dashboard/ui-kit/ui-modal"              component={UiModals}/>
-                    <Route path="/dashboard/ui-kit/ui-notifications"      component={UiNotifications}/>
-                    <Route path="/dashboard/ui-kit/ui-offcanvas"          component={UiOffcanvas}/>
-                    <Route path="/dashboard/ui-kit/ui-pagination"         component={UiPaginations}/>
-                    <Route path="/dashboard/ui-kit/ui-popovers"           component={UiPopovers}/>
-                    <Route path="/dashboard/ui-kit/ui-progressbars"       component={UiProgressbars}/>
-                    <Route path="/dashboard/ui-kit/ui-tabs"               component={UiTabs}/>
-                    <Route path="/dashboard/ui-kit/ui-tooltips"           component={UiTooltips}/>
-                    <Route path="/dashboard/ui-kit/ui-typography"         component={UiTypographys}/>
+                    <Route path="/dashboard/ui-kit/ui-alerts" element={<UiAlerts/>}/>
+                    <Route path="/dashboard/ui-kit/ui-badges" element={<UiBadges/>}/>
+                    <Route path="/dashboard/ui-kit/ui-breadcrumb" element={<UiBreadcrumbs/>}/>
+                    <Route path="/dashboard/ui-kit/ui-buttons" element={<UiButtons/>}/>
+                    <Route path="/dashboard/ui-kit/ui-cards" element={<UiCards/>}/>
+                    <Route path="/dashboard/ui-kit/ui-carousel" element={<UiCarousels/>}/>
+                    <Route path="/dashboard/ui-kit/ui-color" element={<UiColors/>}/>
+                    <Route path="/dashboard/ui-kit/ui-dropdowns" element={<UiDropdowns/>}/>
+                    <Route path="/dashboard/ui-kit/ui-embed-video" element={<UiEmbedVideos/>}/>
+                    <Route path="/dashboard/ui-kit/ui-grid" element={<UiGrids/>}/>
+                    <Route path="/dashboard/ui-kit/ui-images" element={<UiImages/>}/>
+                    <Route path="/dashboard/ui-kit/ui-list-groups" element={<UiListGroups/>}/>
+                    <Route path="/dashboard/ui-kit/ui-modal" element={<UiModals/>}/>
+                    <Route path="/dashboard/ui-kit/ui-notifications" element={<UiNotifications/>}/>
+                    <Route path="/dashboard/ui-kit/ui-offcanvas" element={<UiOffcanvas/>}/>
+                    <Route path="/dashboard/ui-kit/ui-pagination" element={<UiPaginations/>}/>
+                    <Route path="/dashboard/ui-kit/ui-popovers" element={<UiPopovers/>}/>
+                    <Route path="/dashboard/ui-kit/ui-progressbars" element={<UiProgressbars/>}/>
+                    <Route path="/dashboard/ui-kit/ui-tabs" element={<UiTabs/>}/>
+                    <Route path="/dashboard/ui-kit/ui-tooltips" element={<UiTooltips/>}/>
+                    <Route path="/dashboard/ui-kit/ui-typography" element={<UiTypographys/>}/>
 
                     {/* extrapages */}
-                    <Route path="/dashboard/extrapages/pages-pricing"     component={Pricing}/>
-                    <Route path="/dashboard/extrapages/pages-pricing-one" component={Pricing1}/>
-                    <Route path="/dashboard/extrapages/pages-timeline"    component={Timeline}/>
-                    <Route path="/dashboard/extrapages/pages-invoice"     component={Invoice}/>
-                    <Route path="/dashboard/extrapages/pages-faq"         component={Faq}/>
-                    <Route path="/dashboard/extrapages/privacy-policy"    component={PrivacyPolicy}/>
-                    <Route path="/dashboard/extrapages/terms-of-service"  component={TermsofService}/>
-                    <Route path="/dashboard/extrapages/blankpage"  component={BlankPage}/>
-                    <Route path="/dashboard/app/admin"                 component={Admin} />
+                    <Route path="/dashboard/extrapages/pages-pricing" element={<Pricing/>}/>
+                    <Route path="/dashboard/extrapages/pages-pricing-one" element={<Pricing1/>}/>
+                    <Route path="/dashboard/extrapages/pages-timeline" element={<Timeline/>}/>
+                    <Route path="/dashboard/extrapages/pages-invoice" element={<Invoice/>}/>
+                    <Route path="/dashboard/extrapages/pages-faq" element={<Faq/>}/>
+                    <Route path="/dashboard/extrapages/privacy-policy" element={<PrivacyPolicy/>}/>
+                    <Route path="/dashboard/extrapages/terms-of-service" element={<TermsofService/>}/>
+                    <Route path="/dashboard/extrapages/blankpage" element={<BlankPage/>}/>
+                    <Route path="/dashboard/app/admin" element={<Admin/>}/>
 
-                </Switch>
+                </Routes>
             </CSSTransition>
         </TransitionGroup>
     )

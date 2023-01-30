@@ -1,16 +1,16 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 
 import Chat from '../views/dashboard/app/chat';
 
 const ChatRouter = () => {
-  return (
-      <>
-        <Switch>
-            <Route path="/chat/index"          component={Chat} />
-        </Switch>
-      </>
-  )
+    return (
+        <>
+            <Routes>
+                <Route path="/chat/index" element={<Chat/>}/>
+            </Routes>
+        </>
+    )
 }
 
 export default ChatRouter

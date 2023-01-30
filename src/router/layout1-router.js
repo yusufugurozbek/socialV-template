@@ -1,7 +1,7 @@
 import React from 'react'
 
 //router
-import { Switch,Route } from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 
 //pages
 import Groups from '../views/dashboard/app/groups';
@@ -30,29 +30,29 @@ import Profile3 from '../views/dashboard/profiles/profile3';
 const Layout1Router = () => {
     return (
         <>
-            <Switch>
-                <Route path="/dashboards/app/groups"                component={Groups}></Route>
-                <Route path="/dashboards/app/group-detail"          component={GroupDetail}></Route>
-                <Route path="/dashboards/app/friend-list"           component={FriendList} />
-                <Route path="/dashboards/app/profile-images"        component={ProfileImages} />
-                <Route path="/dashboards/app/profile-videos"        component={ProfileVideos} />
-                <Route path="/dashboards/app/profile-events"        component={ProfileEvents} />
-                <Route path="/dashboards/app/event-detail"          component={EventDetail} />
-                <Route path="/dashboards/app/calendar"              component={Calendar}/>
-                <Route path="/dashboards/app/birthday"              component={Birthday} />
-                <Route path="/dashboards/app/weather"               component={Weather}/>
-                <Route path="/dashboards/app/music"                 component={Music} />
-                <Route path="/dashboards/store/store-category-grid" component={CatergoryGrid}/>
-                <Route path="/dashboards/store/store-category-list" component={CatergoryList}/>
-                <Route path="/dashboards/store/store-detail"        component={StoreDetail}/>
-                <Route path="/dashboards/store/store-checkout"      component={StoreCheckout}/>
+            <Routes>
+                <Route path="/dashboards/app/groups" element={<Groups/>}></Route>
+                <Route path="/dashboards/app/group-detail" element={<GroupDetail/>}></Route>
+                <Route path="/dashboards/app/friend-list" element={<FriendList/>}/>
+                <Route path="/dashboards/app/profile-images" element={<ProfileImages/>}/>
+                <Route path="/dashboards/app/profile-videos" element={<ProfileVideos/>}/>
+                <Route path="/dashboards/app/profile-events" element={<ProfileEvents/>}/>
+                <Route path="/dashboards/app/event-detail" element={<EventDetail/>}/>
+                <Route path="/dashboards/app/calendar" element={<Calendar/>}/>
+                <Route path="/dashboards/app/birthday" element={<Birthday/>}/>
+                <Route path="/dashboards/app/weather" element={<Weather/>}/>
+                <Route path="/dashboards/app/music" element={<Music/>}/>
+                <Route path="/dashboards/store/store-category-grid" element={<CatergoryGrid/>}/>
+                <Route path="/dashboards/store/store-category-list" element={<CatergoryList/>}/>
+                <Route path="/dashboards/store/store-detail" element={<StoreDetail/>}/>
+                <Route path="/dashboards/store/store-checkout" element={<StoreCheckout/>}/>
 
-                <Route path="/dashboards/market-place/market1"      component={Market1} />
-                <Route path="/dashboards/market-place/market2"      component={Market2} />
-                <Route path="/dashboards/profiles/profile1"         component={Profile1} />
-                <Route path="/dashboards/profiles/profile2"         component={Profile2} />
-                <Route path="/dashboards/profiles/profile3"         component={Profile3} />
-            </Switch>
+                <Route path="/dashboards/market-place/market1" element={<Market1/>}/>
+                <Route path="/dashboards/market-place/market2" element={<Market2/>}/>
+                <Route path="/dashboards/profiles/profile1" element={<Profile1/>}/>
+                <Route path="/dashboards/profiles/profile2" element={<Profile2/>}/>
+                <Route path="/dashboards/profiles/profile3" element={<Profile3/>}/>
+            </Routes>
         </>
     )
 }
