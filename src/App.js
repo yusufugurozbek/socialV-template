@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+//router
+import IndexRouters from "./router/index"
+
+//scss
+import "./assets/scss/socialv.scss"
+import "./assets/scss/customizer.scss"
+
+
+// Redux Selector / Action
+import { useDispatch } from 'react-redux';
+
+// import state selectors
+import { setSetting } from './store/setting/actions'
+
 
 function App() {
+  const dispatch = useDispatch()
+  dispatch(setSetting())
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <IndexRouters />
+      </div>
   );
 }
 
